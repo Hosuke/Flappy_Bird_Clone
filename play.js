@@ -5,6 +5,8 @@ var play_state = {
     create: function() {
         var space_key = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
         space_key.onDown.add(this.jump, this);
+        var tap = this.game.input;
+        tap.onTap.add(this.jump, this);
 
         this.pipes = game.add.group();
         this.pipes.createMultiple(20, 'pipe');
